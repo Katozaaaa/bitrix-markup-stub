@@ -1,12 +1,12 @@
 @use '../../modules/variables';
 @use '../../modules/mixins' as *;
 
-@include font-face('Proxima Nova', 'http://localhost:8080/assets/fonts/ProximaNova-Light', 300, normal, woff2 woff);
-@include font-face('Proxima Nova', 'http://localhost:8080/assets/fonts/ProximaNova-Regular', 400, normal, woff2 woff);
-@include font-face('Proxima Nova', 'http://localhost:8080/assets/fonts/ProximaNova-Semibold', 600, normal, woff2 woff);
-@include font-face('Proxima Nova', 'http://localhost:8080/assets/fonts/ProximaNova-Bold', 700, normal, woff2 woff);
-@include font-face('Proxima Nova', 'http://localhost:8080/assets/fonts/ProximaNova-Extrabld', 800, normal, woff2 woff);
-@include font-face('Proxima Nova', 'http://localhost:8080/assets/fonts/ProximaNova-Black', 900, normal, woff2 woff);
+@include font-face('Proxima Nova', 'assets/fonts/ProximaNova-Light', 300, normal, woff2 woff);
+@include font-face('Proxima Nova', 'assets/fonts/ProximaNova-Regular', 400, normal, woff2 woff);
+@include font-face('Proxima Nova', 'assets/fonts/ProximaNova-Semibold', 600, normal, woff2 woff);
+@include font-face('Proxima Nova', 'assets/fonts/ProximaNova-Bold', 700, normal, woff2 woff);
+@include font-face('Proxima Nova', 'assets/fonts/ProximaNova-Extrabld', 800, normal, woff2 woff);
+@include font-face('Proxima Nova', 'assets/fonts/ProximaNova-Black', 900, normal, woff2 woff);
 
 .layout {
   color: variables.$color-text--primary;
