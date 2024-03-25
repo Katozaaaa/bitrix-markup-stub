@@ -1,0 +1,436 @@
+extends ../core/ui/layout/templates/default.pug
+
+block title 
+  | Marketplace
+
+block beforeWorkarea
+
+  .header-top
+    a.logo(href='/')
+      | Marketplace
+
+    .search 
+      svg.search__icon
+        use(xlink:href="#search")
+
+      input.search__input(placeholder='Search for a product, flower, etc')
+
+    ul.filter-categories
+      li.filter-categories__category
+        input.filter-categories__input(type='checkbox' name='categories' value='Buds')
+
+        .filter-categories__label
+          svg.filter-categories__icon
+            use(xlink:href="#highest-quality")
+
+          .filter-categories__name
+            | Buds
+      
+      li.filter-categories__category
+        input.filter-categories__input(type='checkbox' name='categories' value='Edible')
+                
+        .filter-categories__label
+          svg.filter-categories__icon
+            use(xlink:href="#highest-quality")
+
+          .filter-categories__name
+            | Edible
+      
+      li.filter-categories__category
+        input.filter-categories__input(type='checkbox' name='categories' value='Non Edible')
+                
+        .filter-categories__label
+          svg.filter-categories__icon
+            use(xlink:href="#highest-quality")
+
+          .filter-categories__name
+            | Non Edible
+
+      li.filter-categories__category
+        input.filter-categories__input(type='checkbox' name='categories' value='Concentrate')
+                
+        .filter-categories__label
+          svg.filter-categories__icon
+            use(xlink:href="#highest-quality")
+
+          .filter-categories__name
+            | Concentrate
+
+  .header-mid
+    ul.filter-sliders
+      li.filter-sliders__slider-wrapper
+        .filter-sliders__name
+          | Price Range
+
+        .filter-sliders__slider(data-min='234' data-max='9999' data-handles='234, 6000'
+        data-unit='$')
+
+        .filter-sliders__range 
+          .filter-sliders__value-wrapper.filter-sliders__value-wrapper--left
+            input.filter-sliders__value(type='number'
+            oninput="this.style.width = this.value.length * 0.6 + 'em';")
+            .filter-sliders__value-unit
+              | $
+
+          .filter-sliders__value-wrapper.filter-sliders__value-wrapper--right
+            input.filter-sliders__value(type='number'
+            oninput="this.style.width = this.value.length * 0.6 + 'em';")
+            .filter-sliders__value-unit
+              | $
+
+      li.filter-sliders__slider-wrapper
+        .filter-sliders__name
+          | THC, %
+
+        .filter-sliders__slider(data-min='0' data-max='100' data-handles='65'
+        data-unit='%')
+
+        .filter-sliders__range 
+          .filter-sliders__value-wrapper.filter-sliders__value-wrapper--left
+            input.filter-sliders__value(type='number'
+            oninput="this.style.width = this.value.length * 0.6 + 'em';")
+            .filter-sliders__value-unit
+              | %
+
+          .filter-sliders__value-wrapper.filter-sliders__value-wrapper--right
+            input.filter-sliders__value(type='number'
+            oninput="this.style.width = this.value.length * 0.6 + 'em';")
+            .filter-sliders__value-unit
+              | %
+
+      li.filter-sliders__slider-wrapper
+        .filter-sliders__name
+          | CBD, %
+
+        .filter-sliders__slider(data-min='0' data-max='100' data-handles='65'
+        data-unit='%')
+
+        .filter-sliders__range 
+          .filter-sliders__value-wrapper.filter-sliders__value-wrapper--left
+            input.filter-sliders__value(type='number'
+            oninput="this.style.width = this.value.length * 0.6 + 'em';")
+            .filter-sliders__value-unit
+              | %
+
+          .filter-sliders__value-wrapper.filter-sliders__value-wrapper--right
+            input.filter-sliders__value(type='number'
+            oninput="this.style.width = this.value.length * 0.6 + 'em';")
+            .filter-sliders__value-unit
+              | %
+
+    .nose-filter
+      .nose-filter__header 
+        | Nose
+      
+      .nose-filter__values
+        svg.nose-filter__background(viewBox="0 0 106 27" preserveAspectRatio="none")
+          clipPath#nose-filter__clip-path
+            path(d="M0 6.90472H3.78571V26.4047H0V6.90472Z")
+            path(d="M11.3571 6.90472H15.1429V26.4047H11.3571V6.90472Z")
+            path(d="M22.7143 6.90472H26.5V26.4047H22.7143V6.90472Z")
+            path(d="M34.0714 6.90472H37.8571V26.4047H34.0714V6.90472Z")
+            path(d="M45.4286 6.90472H49.2143V26.4047H45.4286V0.6.90472Z")
+            path(d="M56.7857 6.90472H60.5714V26.4047H56.7857V6.90472Z")
+            path(d="M68.1429 6.90472H71.9286V26.4047H68.1429V6.90472Z")
+            path(d="M79.5 6.90472H83.2857V26.4047H79.5V6.90472Z")
+            path(d="M90.8571 6.90472H94.6429V26.4047H90.8571V6.90472Z")
+            path(d="M102.214 6.904724H106V26.4047H102.214V6.90472Z")
+            path(d="M56.7857 6.90472H60.5714V26.4047H56.7857V6.90472Z")
+            path(d="M68.1429 6.90472H71.9286V26.4047H68.1429V6.90472Z")
+            path(d="M79.5 6.90472H83.2857V26.4047H79.5V6.90472Z")
+            path(d="M90.8571 6.90472H94.6429V26.4047H90.8571V6.90472Z")
+            path(d="M102.214 6.90472H106V26.4047H102.214V0.404724Z")
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='10%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='20%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='30%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='40%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='50%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='60%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='70%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='80%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='90%')
+          .nose-filter__arm
+
+        .nose-filter__value
+          input.nose-filter__input(type="radio" name='nose' value='100%')
+          .nose-filter__arm
+
+    .sort-products
+      .sort-products__button
+        .sort-products__button-content
+          svg.sort-products__button-icon
+            use(xlink:href="#sort")
+
+      .sort-products__tab
+        .sort-products__tab-header
+          | Sort By:
+
+        ul.sort-products__tab-content(data-sort="date-new")
+          li.sort-products__tab-sort-by
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#date")
+
+            .sort-products__by-name
+              | Date (New first)
+
+          li.sort-products__tab-sort-by(data-sort="date-old")
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#date")
+              
+            .sort-products__by-name
+              | Date (Old first)
+
+          li.sort-products__tab-sort-by(data-sort="high-price")
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#high-price")
+              
+            .sort-products__by-name
+              | Price (High first)
+
+          li.sort-products__tab-sort-by(data-sort="low-price")
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#low-price")
+              
+            .sort-products__by-name
+              | Price (Low first)
+
+          li.sort-products__tab-sort-by(data-sort="high-thc")
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#thc")
+
+              svg.sort-products__by-additional-icon
+                use(xlink:href="#high")
+              
+            .sort-products__by-name
+              | Total THC (High first)
+
+          li.sort-products__tab-sort-by(data-sort="low-thc")
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#thc")
+
+              svg.sort-products__by-additional-icon
+                use(xlink:href="#low")
+              
+            .sort-products__by-name
+              | Total THC (Low first)
+
+          li.sort-products__tab-sort-by(data-sort="high-cbd")
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#cbd")
+
+              svg.sort-products__by-additional-icon
+                use(xlink:href="#high")
+              
+            .sort-products__by-name
+              | Total CBD (High first)
+
+          li.sort-products__tab-sort-by(data-sort="low-cbd")
+            .sort-products__by-icon
+              svg.sort-products__by-primary-icon
+                use(xlink:href="assets/icons/default/sprite.svg#cbd")
+
+              svg.sort-products__by-additional-icon
+                use(xlink:href="#low")
+              
+            .sort-products__by-name
+              | Total CBD (Low first)
+
+  .header-bot
+    .filter-results
+      .filter-results__count 
+        | 1034,5
+
+      .filter-results__text
+        | Results
+
+    .choosen-filters  
+
+block workarea 
+
+  .left-sidebar
+    .product-filters
+      svg.product-filters__background
+        use(xlink:href="#background-leaf")
+
+      ul.product-filters__wrapper
+        li.product-filters__section.product-filters__section--show
+          .product-filters__section-header 
+            .product-filters__section-name
+              | Classification
+
+            svg.product-filters__tab-icon(style="transform: rotate(0deg);")
+              use(xlink:href="#filter-tab-arrow")
+
+          ul.product-filters__filters
+            li.product-filters__filter
+              input.product-filters__filter-input(id='classification-1'
+                type='checkbox' name='classification' value='100% Indica')
+              label.product-filters__filter-label(for='classification-1')
+                | 100% Indica
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='classification-2'
+                type='checkbox' name='classification' value='100% Sativa')
+              label.product-filters__filter-label(for='classification-2')
+                | 100% Sativa
+            
+            li.product-filters__filter
+              input.product-filters__filter-input(id='classification-3'
+                type='checkbox' name='classification' value='>50% Indica')
+              label.product-filters__filter-label(for='classification-3')
+                | >50% Indica
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='classification-4'
+                type='checkbox' name='classification' value='>50% Sativa')
+              label.product-filters__filter-label(for='classification-4')
+                | >50% Sativa
+
+        li.product-filters__section.product-filters__section--show
+          .product-filters__section-header 
+            .product-filters__section-name
+              | Production Method
+
+            svg.product-filters__tab-icon(style="transform: rotate(0deg);")
+              use(xlink:href="#filter-tab-arrow")
+
+          ul.product-filters__filters
+            li.product-filters__filter
+              input.product-filters__filter-input(id='production-method-1'
+                type='checkbox' name='production-method' value='Indoor')
+              label.product-filters__filter-label(for='production-method-1')
+                | Indoor
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='production-method-2'
+                type='checkbox' name='production-method' value='Outdoor')
+              label.product-filters__filter-label(for='production-method-2')
+                | Outdoor
+            
+            li.product-filters__filter
+              input.product-filters__filter-input(id='production-method-3'
+                type='checkbox' name='production-method' value='Greenhouse')
+              label.product-filters__filter-label(for='production-method-3')
+                | Greenhouse
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='production-method-4'
+                type='checkbox' name='production-method' value='Light Deprivation')
+              label.product-filters__filter-label(for='production-method-4')
+                | Light Deprivation
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='production-method-5'
+                type='checkbox' name='production-method' value='Mixed Light')
+              label.product-filters__filter-label(for='production-method-5')
+                | Mixed Light
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='production-method-6'
+                type='checkbox' name='production-method' value='Other')
+              label.product-filters__filter-label(for='production-method-6')
+                | Other
+
+        li.product-filters__section
+          .product-filters__section-header 
+            .product-filters__section-name
+              | Size
+
+            svg.product-filters__tab-icon
+              use(xlink:href="#filter-tab-arrow")
+
+          ul.product-filters__filters
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-1'
+                type='checkbox' name='size' value='Flower')
+              label.product-filters__filter-label(for='size-1')
+                | Flower
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-2'
+                type='checkbox' name='size' value='Pre-Roll Flower')
+              label.product-filters__filter-label(for='size-2')
+                | Pre-Roll Flower
+            
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-3'
+                type='checkbox' name='size' value='Pre-Roll Infused')
+              label.product-filters__filter-label(for='size-3')
+                | Pre-Roll Infused
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-4'
+                type='checkbox' name='size' value='Pre-Roll Leaf')
+              label.product-filters__filter-label(for='size-4')
+                | Pre-Roll Leaf
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-5'
+                type='checkbox' name='size' value='Shake')
+              label.product-filters__filter-label(for='size-5')
+                | Shake
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-6'
+                type='checkbox' name='size' value='Smalls')
+              label.product-filters__filter-label(for='size-6')
+                | Smalls
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-7'
+                type='checkbox' name='size' value='Trim')
+              label.product-filters__filter-label(for='size-7')
+                | Trim
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-8'
+                type='checkbox' name='size' value='Shake')
+              label.product-filters__filter-label(for='size-8')
+                | Shake
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-9'
+                type='checkbox' name='size' value='Keef')
+              label.product-filters__filter-label(for='size-9')
+                | Keef
+
+            li.product-filters__filter
+              input.product-filters__filter-input(id='size-10'
+                type='checkbox' name='size' value='Fresh Frozen')
+              label.product-filters__filter-label(for='size-10')
+                | Fresh Frozen
+
+  .page-content

@@ -1,0 +1,67 @@
+@use '../../modules/variables';
+
+.nose-filter {
+  position: relative;
+  padding-bottom: 13px;
+
+  &__values {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7.5px;
+    height: 28px;
+    margin-top: 5px;
+    background: linear-gradient(to right, #f0ed48, #297019);
+    clip-path: url('#nose-filter__clip-path');
+
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+  }
+
+  &__input {
+    display: none;
+  }
+  
+  &__value {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 4px;
+    height: 100%;
+  }
+
+  &__arm {
+    height: 60%;
+  }
+
+  &__header {
+    font-weight: 600;
+
+    &:before {
+      content: 'min';
+      position: absolute;
+      left: 0;
+      top: 79%;
+      display: block;
+      font-size: 14px;
+      color: variables.$color-text--non-active;
+    }
+  
+    &:after {
+      content: 'max';
+      position: absolute;
+      right: 0;
+      top: 79%;
+      display: block;
+      font-size: 14px;
+      color: variables.$color-text--non-active;
+    }
+  }
+  
+}

@@ -1,0 +1,10 @@
+.filter-results {
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+  line-height: 21.6px;
+
+  &__text {
+    margin-left: 5px;
+  }
+}

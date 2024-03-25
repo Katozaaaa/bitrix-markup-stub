@@ -1,0 +1,136 @@
+@use '../../modules/variables';
+
+.filter-sliders {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: max-content;
+  gap: 26px;
+  list-style-type: none;
+
+  &__slider-wrapper {
+    width: 225px;
+  }
+
+  &__slider {
+    margin-top: 23px;
+  }
+
+  &__slider.noUi-horizontal {
+    height: 4px;
+  }
+
+  &__slider.noUi-target {
+    background: #30303D;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+
+    .noUi-handle {
+      right: -8px;
+      width: 16px;
+      height: 16px;
+      border: none;
+      border-radius: 50%;
+      background-image: linear-gradient(#85D62D, #6BAB2B);
+      box-shadow: 0 10px 26px #1E1D2E4D;
+    }
+
+    .noUi-handle:before {
+      position: static;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: inset 3px 5px 12px #FFFFFF33;
+    }
+
+    .noUi-handle:after {
+      content: none;
+    }
+
+    .noUi-connects {
+      overflow: visible;
+    }
+
+    .noUi-connect {
+      background: #7ACB22;
+      box-shadow: 0px 3px 15px #84D52C4F;
+    }
+
+    .noUi-tooltip {
+      bottom: 160%;
+      padding: 4px 5px;
+      color: variables.$color-text--primary;
+      border: none;
+      background-color: #30303D;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -37%;
+        transform: translate(-50%, 0);
+        border: 6px solid transparent; 
+        border-top: 6px solid #30303D;
+      }
+    }
+  }
+
+  &__range {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  &__value-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: min-content;
+    padding: 0 3px;
+    font-size: 14px;
+    line-height: 18.9px;
+    border: 1px solid #606060;
+    border-radius: 3px;
+    background-color: variables.$color-background--secondary;
+
+    &--left  {
+      color: #FFFFFF;
+    }
+
+    &--left .filter-sliders__value {
+      color: #FFFFFF;
+    }
+
+    &--right {
+      color: #959595;
+    }
+
+    &--right .filter-sliders__value {
+      color: #959595;
+    }
+
+
+  }
+
+  &__value {
+    font-family: 'Proxima Nova';
+    background: none;
+    border: none;
+    outline: none;
+    
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }   
+  }
+
+  &__value-unit {
+    line-height: 150%;
+    margin-left: 4px;
+  }
+
+}

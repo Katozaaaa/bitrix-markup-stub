@@ -1,0 +1,62 @@
+@use '../../modules/variables';
+
+.filter-categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 9px;
+  list-style-type: none;
+
+  &__category {
+    height: min-content;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background-image: linear-gradient(variables.$color-background--secondary, variables.$color-background--secondary), 
+                      linear-gradient(#84D52C5C, #5f92275c);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    user-select: none;
+    transition: color 0.3s ease-out, box-shadow 0.2s ease-out;
+    
+    &:hover {
+      cursor: pointer;
+      color: variables.$color-accent--primary;
+
+      .filter-categories__icon {
+        fill: variables.$color-accent--primary;
+      }
+    }
+
+    &--checked {
+      background-image: linear-gradient(variables.$color-background--additional, variables.$color-background--additional), 
+                        linear-gradient(#84D52C5C, #5f92275c);
+      box-shadow: 0 3px 15px #84D52C33;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 12px 20px;
+  }
+
+  &__name {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.3px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: variables.$color-element--primary;
+    transition: fill 0.3s ease-out;
+  }
+
+}

@@ -1,0 +1,37 @@
+@use '../../modules/variables';
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 469px;
+  min-width: max-content;
+  width: 100%;
+  height: min-content;
+  padding: 12px 20px;
+  border: 1px solid variables.$color-element--primary;
+  border-radius: 12px;
+
+  &__input {
+    width: 100%;
+    margin-left: 6px;
+    color: variables.$color-element--primary;
+    font-family: 'Proxima Nova';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.6px;
+    letter-spacing: 0.01em;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: variables.$color-element--primary;
+  }
+}

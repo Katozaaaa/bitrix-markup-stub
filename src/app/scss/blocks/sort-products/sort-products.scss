@@ -1,0 +1,112 @@
+@use '../../modules/variables';
+
+.sort-products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  &__button {
+    width: 48px;
+    height: 48px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-image: linear-gradient(variables.$color-background--secondary, variables.$color-background--secondary), 
+                      linear-gradient(#84D52C5C, #5f92275c);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .sort-products__button-icon {
+      fill: variables.$color-text--primary;
+    }
+  }
+
+  &__button-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__button-icon {
+    width: 24px;
+    height: 24px;
+    fill: variables.$color-accent--primary;
+    transition: fill 0.2s ease-out;
+  }
+
+  &__tab {
+    position: absolute;
+    top: 137%;
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+    width: max-content;
+    background-color: variables.$color-background--additional;
+
+    &--show {
+      display: block;
+    }
+  }
+
+  &__tab-header {
+    font-size: 18px;
+  }
+  
+  &__tab-content {
+    list-style-type: none;
+  }
+
+  &__tab-sort-by {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 9px;
+
+    &:hover {
+      cursor: pointer;
+      color: variables.$color-accent--primary;
+    }
+  }
+
+  &__by-icon {
+    position: relative;
+    display: flex;
+  }
+
+  &__by-primary-icon {
+    width: 24px;
+    height: 24px;
+    fill: variables.$color-accent--primary;
+  }
+
+  &__by-additional-icon {
+    position: absolute;
+  }
+
+  &__by-name {
+    margin-left: 10px;
+    transition: color 0.2s ease-out;
+  }
+}
+
+.sort-products__tab-sort-by[data-sort='high-thc'] .sort-products__by-additional-icon, 
+.sort-products__tab-sort-by[data-sort='high-cbd'] .sort-products__by-additional-icon {
+  bottom: -150%;
+  right: -120%;
+  width: 60px;
+  height: 60px;
+}
+
+.sort-products__tab-sort-by[data-sort='low-thc'] .sort-products__by-additional-icon, 
+.sort-products__tab-sort-by[data-sort='low-cbd'] .sort-products__by-additional-icon {
+  bottom: -40%;
+  right: -60%;
+  width: 25px;
+  height: 25px;
+}
